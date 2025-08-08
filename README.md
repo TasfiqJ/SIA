@@ -9,9 +9,7 @@
 - **CSS3** - Modern CSS with animations and responsive design
 
 ### Prerequisites
-
 - npm install
-   ```
 4. Start the development server:
    ```bash
    npm run dev
