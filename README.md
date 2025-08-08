@@ -10,10 +10,7 @@
 
 ### Prerequisites
 
-- npm
-
-### Installation
-   npm install
+- npm install
    ```
 4. Start the development server:
    ```bash
