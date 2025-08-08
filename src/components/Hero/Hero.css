@@ -1,0 +1,274 @@
+.hero {
+  flex-direction: column;
+  transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 0;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.aurora-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aurora-canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero-header {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  will-change: transform, opacity;
+  z-index: 10;
+}
+
+.hero-address {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  margin: 0;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  margin: 0;
+  opacity: 0.8;
+}
+
+.hero-ayat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hero-ayat:hover {
+  transform: translateY(-2px);
+}
+
+.hero-ayat::after {
+  content: '✦';
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  opacity: 0.4;
+  animation: gentleRotate 8s linear infinite;
+}
+
+@keyframes gentleRotate {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+.ayat-text {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: var(--font-weight-medium);
+  background: linear-gradient(135deg, #fff 0%, #ffe066 50%, #fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  padding: 1rem 0;
+  line-height: 1.8;
+  opacity: 1;
+  font-style: italic;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.7), 0 2px 4px rgba(0,0,0,0.08);
+  letter-spacing: 0.3px;
+  filter: drop-shadow(0 1px 2px rgba(255,255,255,0.3));
+}
+
+.ayat-text::before {
+  content: '❝';
+  position: absolute;
+  left: -1rem;
+  top: -0.5rem;
+  font-size: 2.5rem;
+  color: var(--color-text-light);
+  opacity: 0.3;
+  font-family: serif;
+}
+
+.ayat-text::after {
+  content: '❞';
+  position: absolute;
+  right: -1rem;
+  bottom: -1rem;
+  font-size: 2.5rem;
+  color: var(--color-text-light);
+  opacity: 0.3;
+  font-family: serif;
+}
+
+.ayat-citation {
+  font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  opacity: 0.8;
+  text-align: center;
+  font-style: normal;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: clamp(0.8rem, 2.2vw, 1rem);
+}
+
+.ayat-citation::before,
+.ayat-citation::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  opacity: 0.5;
+  animation: gentlePulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes gentlePulse {
+  0% { opacity: 0.3; transform: translateY(-50%) scale(1); }
+  100% { opacity: 0.7; transform: translateY(-50%) scale(1.1); }
+}
+
+.ayat-citation::before {
+  left: -2rem;
+}
+
+.ayat-citation::after {
+  right: -2rem;
+}
+
+.animated-icons {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  will-change: transform;
+  z-index: 5;
+}
+
+.animated-icon {
+  flex: 1;
+  aspect-ratio: 1;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.duplicate-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  border-radius: 8px;
+  z-index: 500;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .hero-header {
+    top: 45%;
+    width: 90%;
+    gap: 1rem;
+  }
+  
+  .hero-address {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+  
+  .hero-ayat {
+    gap: 0.6rem;
+  }
+  
+  .hero-ayat::after {
+    font-size: 1rem;
+    top: 0.8rem;
+  }
+  
+  .ayat-text {
+    font-size: clamp(0.85rem, 3.5vw, 1.1rem);
+    line-height: 1.6;
+    padding: 0.8rem 0;
+    letter-spacing: 0.2px;
+    background: linear-gradient(135deg, #fff 0%, #ffe066 50%, #fff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 2px rgba(255,255,255,0.3));
+  }
+  
+  .ayat-text::before {
+    left: -0.5rem;
+    top: -0.3rem;
+    font-size: 2rem;
+  }
+  
+  .ayat-text::after {
+    right: -0.5rem;
+    bottom: -0.8rem;
+    font-size: 2rem;
+  }
+  
+  .ayat-citation {
+    font-size: clamp(0.75rem, 3.8vw, 0.9rem);
+    margin-top: 0.4rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .ayat-citation::before {
+    left: -1.5rem;
+    font-size: 0.7rem;
+  }
+  
+  .ayat-citation::after {
+    right: -1.5rem;
+    font-size: 0.7rem;
+  }
+} 

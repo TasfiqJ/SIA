@@ -1,0 +1,53 @@
+@import './styles/globals.css';
+
+.App {
+  min-height: 100vh;
+}
+
+.outro {
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-light);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.outro h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: var(--font-weight-extrabold);
+}
+
+/* Mobile gap reduction */
+@media (max-width: 1000px) {
+  .mobile-events-section {
+    margin-top: -3rem !important;
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .mobile-events-section .events-news-container {
+    padding: 0.8rem !important;
+    gap: 0.6rem !important;
+  }
+  
+  .mobile-events-section .events-header {
+    padding-bottom: 0.6rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .mobile-events-section .events-list {
+    gap: 0.6rem !important;
+  }
+}
+
+/* Additional mobile gap reduction for smaller screens */
+@media (max-width: 640px) {
+  .mobile-events-section {
+    margin-top: -4rem !important;
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.3rem !important;
+  }
+  
+  .mobile-events-section .events-news-container {
+    padding: 0.6rem !important;
+  }
+} 

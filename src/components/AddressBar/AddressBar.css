@@ -1,0 +1,28 @@
+.address-bar {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  background: var(--color-primary-light);
+  z-index: 999;
+  padding: 0.75rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--color-primary-content);
+}
+
+.address-bar p {
+  color: var(--color-primary-content);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .address-bar {
+    top: 70px;
+  }
+
+  .address-bar p {
+    font-size: 0.85rem;
+  }
+} 

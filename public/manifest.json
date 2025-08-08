@@ -1,0 +1,21 @@
+{
+  "name": "SIA Mosque",
+  "short_name": "SIA Mosque",
+  "description": "SIA Mosque - Prayer times, events, and community information",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e3e3db",
+  "theme_color": "#8b4513",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

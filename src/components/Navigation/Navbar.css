@@ -1,0 +1,299 @@
+/* Glass Navigation */
+.glass-navigation {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  margin: 0 auto;
+  max-width: 72rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005));
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  font-family: var(--font-family);
+  transition: all 0.3s ease;
+}
+
+/* Scrolled state - more opaque for better readability on bright backgrounds */
+.glass-navigation.scrolled {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.08));
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+  position: relative;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.right-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.glass-link {
+  position: relative;
+  transform: scale(1);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: transform 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.glass-link:hover {
+  transform: scale(1.05);
+}
+
+.glass-link:active {
+  transform: scale(0.95);
+}
+
+.glass-link-text {
+  position: relative;
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.15s ease;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+}
+
+/* Scrolled state - darker text for better contrast */
+.glass-navigation.scrolled .glass-link-text {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.glass-link:hover .glass-link-text {
+  color: white;
+}
+
+.glass-link-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-link:hover .glass-link-bg {
+  opacity: 1;
+}
+
+/* Logo */
+.logo {
+  pointer-events: auto;
+  position: relative;
+  left: 0;
+  top: 50%;
+  z-index: 10;
+  height: 4.5rem;
+  width: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  filter: none;
+  mix-blend-mode: normal;
+  max-height: 85%;
+  max-width: 250px;
+}
+
+.logo:hover {
+  filter: brightness(0) invert(1);
+}
+
+/* Buttons */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Donate Button */
+.donate-button {
+  position: relative;
+  transform: scale(1);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #4f46e5 40%, #6366f1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  box-shadow: 
+    0 4px 16px rgba(79, 70, 229, 0.3),
+    0 2px 8px rgba(79, 70, 229, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.donate-button:hover {
+  transform: scale(1.05);
+}
+
+.donate-button:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  margin-left: 0.5rem;
+  display: block;
+  transform: scale(1);
+  font-size: 1.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.15s ease;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  box-shadow: 
+    0 1px 4px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Scrolled state - more opaque button */
+.glass-navigation.scrolled .mobile-menu-btn {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: block;
+  overflow: hidden;
+}
+
+.mobile-menu-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.mobile-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text-link {
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.15s ease;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+}
+
+/* Scrolled state - better contrast for mobile links */
+.glass-navigation.scrolled .text-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-link:hover {
+  color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .glass-navigation {
+    left: 1.5rem;
+    right: 1.5rem;
+    top: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .glass-navigation {
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .nav-container {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 3.2rem;
+    width: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    filter: none;
+    mix-blend-mode: normal;
+    max-height: 85%;
+    max-width: 180px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .right-links {
+    display: none;
+  }
+} 

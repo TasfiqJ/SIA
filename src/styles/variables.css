@@ -1,0 +1,40 @@
+:root {
+  /* Mosque Color Scheme */
+  --color-primary: #b4d3b2;
+  --color-primary-content: #335531;
+  --color-primary-light: #d4e6d2;
+  --color-primary-dark: #94c092;
+
+  --color-secondary: #b2c4d3;
+  --color-secondary-content: #314555;
+  --color-secondary-light: #d2dde6;
+  --color-secondary-dark: #92abc0;
+  
+  --color-background-final: #e3e3db;
+  --color-white: #fff;
+  
+  /* Spacing */
+  --navbar-height: 80px;
+  --total-header-height: 0px;
+  
+  /* Breakpoints */
+  --mobile-breakpoint: 1000px;
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s ease;
+  --transition-fast: all 0.1s ease;
+  
+  /* Shadows & Effects */
+  --glass-bg-dark: rgba(51, 85, 49, 0.9);
+  --glass-bg-light: rgba(212, 230, 210, 0.95);
+  --glass-border-light: rgba(212, 230, 210, 0.2);
+  --glass-border-dark: rgba(51, 85, 49, 0.2);
+  
+  /* Typography */
+  --font-family: "Host Grotesk", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+} 
